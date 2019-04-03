@@ -13,7 +13,6 @@ const  PostLink=(props)=>(
     </li>
 );
 
-
 export  default  class  extends React.Component{
    constructor(props){
        super(props)

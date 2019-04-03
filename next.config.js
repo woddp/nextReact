@@ -1,2 +1,3 @@
 const withLess = require('@zeit/next-less')
-module.exports = withLess()
+const withCss = require('@zeit/next-css')
+module.exports = withLess(withCss())
