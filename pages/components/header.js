@@ -1,58 +1,57 @@
-import  Link from  'next/link'
+import Link from 'next/link'
 import React from 'react'
 import Store from '../stores/store';
-
-const linkStyle={
- marginRight:'15px',
-  fontSize:'25px',
-};
-
-const style=   <style jsx>
-    {`
-
-                   `}
-</style>;
+import css from './header.less'
 
 
-export  default class extends React.Component{
-    constructor(props){
+
+export default class extends React.Component {
+    constructor(props) {
         super(props)
         this.handleChange = this.handleChange.bind(this);
         console.log(props);
     }
 
-    handleChange(){
-        let d=new Date();
-        Store.commit("woddp",d.getTime());
+    handleChange() {
+        let d = new Date();
+        Store.commit("woddp", d.getTime());
     }
 
-    render(){
+    render() {
 
         return (
-            <div>
-                <style jsx>
-                    {`
-                    a{
-     color:#EF141F;
-     font-size:26px;
-     line-height:40px;
-     text-decoration:none;
-     padding:0 10px;
-     text-transform:uppercase;
-    }
-    a:hover{
-     opacity:0.8;
-    }
-                   `}
-                </style>
-                <Link href="/">
-                    <a  style={linkStyle}>Home</a>
-                </Link>
-                <Link href="/about">
-                    <a style={linkStyle}>about</a>
-                </Link>
-                <a   onClick={this.handleChange} style={linkStyle}>测试</a>
-            </div>
+                <header className="main-header main-header visible">
+                    <div className="container">
+                                <a href='/' className="logo">
+                                    <img src="https://b-gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg" alt="掘金"
+                                         className="logo-img" />
+                                </a>
+
+                        <nav  role="navigation" className="main-nav">
+                            <ul  className="nav-list">
+                                <li  className="main-nav-list">
+                                    <div  className="phone-show-menu"><span >首页</span>
+                                        <div  className="icon ion-arrow-down-b"></div>
+                                    </div>
+                                    <ul  className="phone-hide">
+                                        <li  className="nav-item link-item route-active active"><a
+                                             href="/">首页</a></li>
+                                        <li  className="nav-item link-item activities"><a
+                                             href="/activities">动态</a></li>
+                                        <li  className="nav-item link-item"><a    href="/topics">话题</a>
+                                        </li>
+                                        <li  className="nav-item link-item book"><a   href="/books">小册</a>
+                                        </li>
+                                        <li  className="nav-item link-item"><a   href="/events/all">活动</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                              </ul>
+                        </nav>
+                    </div>
+                    
+                </header>
+
         )
     }
 }

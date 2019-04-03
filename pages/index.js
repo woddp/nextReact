@@ -3,6 +3,8 @@ import Link from  'next/link'
 import fetch from 'isomorphic-unfetch'
 import React from 'react'
 import Store from './stores/store';
+import './index.less'
+import './components/header.less'
 const  PostLink=(props)=>(
     <li>
         <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
@@ -48,43 +50,7 @@ export  default  class  extends React.Component{
                     )
                 })}
             </ul>
-             <style jsx>
-                 {`
-                    *{
-                        margin:0;
-                        padding:0;
-                       }
-                       h1,a{
-                        font-family:'Arial';
-                       }
-                       h1{
-                        margin-top:20px;
-                        background-color:#EF141F;
-                        color:#fff;
-                        font-size:50px;
-                        line-height:66px;
-                        text-transform: uppercase;
-                        text-align:center;
-                       }
-                       ul{
-                        margin-top:20px;
-                        padding:20px;
-                        background-color:#000;
-                       }
-                       li{
-                        list-style:none;
-                        margin:5px 0;
-                       }
-                       a{
-                        text-decoration:none;
-                        color:#B4B5B4;
-                        font-size:24px;
-                       }
-                       a:hover{
-                        opacity:0.6;
-                       }
-                 `}
-             </style>
+
         </Layout>)
     }
 }

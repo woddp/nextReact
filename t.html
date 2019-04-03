@@ -1,66 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<script>
+<header className="main-header main-header visible">
+    <div className="container"><a href="/" className="logo"><img
+            src="https://b-gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg" alt="掘金"
+            className="logo-img"></a>
+        <nav role="navigation" className="main-nav">
+            <ul className="nav-list">
+                <li className="main-nav-list">
+                    <div className="phone-show-menu"><span>首页</span>
+                        <div className="icon ion-arrow-down-b"></div>
+                    </div>
+                    <ul className="phone-hide">
+                        <li className="nav-item link-item route-active active"><a href="/">首页</a>
+                        </li>
+                        <li className="nav-item link-item activities"><a href="/activities">动态</a>
+                        </li>
+                        <li className="nav-item link-item"><a href="/topics">话题</a></li>
+                        <li className="nav-item link-item book"><a href="/books">小册</a>
+                        </li>
+                        <li className="nav-item link-item"><a href="/events/all">活动</a>
+                        </li>
+                    </ul>
+                </li>
+                <li className="nav-item search">
+                    <form role="search" className="search-form"><input maxLength="32"
+                                                                       placeholder="搜索更新啦"
+                                                                       className="search-input"><img
 
+                            src="https://b-gold-cdn.xitu.io/v3/static/img/juejin-search-icon.6f8ba1b.svg" alt="搜索"
+                            className="search-icon"></form>
+                </li>
+                <li className="nav-item add">
+                    <div className="add-group">
+                        <button className="add-btn">写文章</button>
+                        <div className="more"><i className="more-icon ion-android-arrow-dropdown"></i>
+                        </div>
+                        <ul className="more-list">
+                            <li className="item">发布沸点</li>
+                            <li className="item">分享链接</li><!----></ul>
+                    </div><!----></li>
+                <li className="nav-item notification"><a className="app-link" href="/notification" target="_blank"><i
+                        className="icon ion-android-notifications"></i><!----></a></li>
+                <li className="nav-item menu">
+                    <div
+                            data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                            className="lazy avatar avatar loaded immediate"
+                            style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                    <!---->
+                    <ul className="nav-menu user-dropdown-list" style="display: none;">
+                        <div className="nav-menu-item-group">
+                            <li className="nav-menu-item"><a><i
+                                    className="fengwei fw-write"></i><span
+                            >写文章</span></a></li><!---->
+                            <li className="nav-menu-item"><a><i
+                                    className="fengwei fw-draft"></i><span
+                            >草稿</span></a></li>
+                        </div>
+                        <div className="nav-menu-item-group">
+                            <li className="nav-menu-item"><a
+                                    href="/user/582f1fe667f35600634207a1"
+                                    className="link-icon"><i
+                                    className="fengwei fw-person"></i><span
+                            >我的主页</span><!----></a></li>
+                            <li className="nav-menu-item"><a
+                                    href="/user/582f1fe667f35600634207a1/likes"><img
+                                    src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg"
+                                    className="zan"><span>我赞过的</span></a></li><!---->
+                            <li className="nav-menu-item"><a
+                                    href="/user/582f1fe667f35600634207a1/collections"><img
 
-var  Store={
-    list:[],
-    editA:[],
-    commit:function (option,val) {
-        if(!this._isVal(option)){
-            this.list.push({value:val,key:option});
-        }
-        this._change(option,val);
-    },
-    _isVal:function (key,lists=[]) {
-        let is=false;
-        for (let item of lists){
-             if(item.key===key){
-                 is=true;
-                 break;
-             }
-        }
-        return is;
-    },
-    _change:function (key,val) {
-            for (let item of this.editA){
-                if(item.key===key){
-                    item.val(val);
-                }
-            }
-    },
-    emit:function (key,callback) {
-        if(!this._isVal(key,this.editA)){
-            this.editA.push({key:key,val:callback});
-        }
-    }
-}
-
-
-Store.emit("state",function (val) {
-    console.log("监听到变化："+val);
-})
-Store.emit("woddp",function (val) {
-    console.log("监听到变化："+val);
-})
-
-Store.commit("state",1);
-Store.commit("state",2);
-Store.commit("state",4);
-Store.commit("state",32);
-Store.commit("woddp","你好");
-
-
-
-
-
-
-
-</script>
-</body>
-</html>
+                                    src="https://b-gold-cdn.xitu.io/v3/static/img/collect.02e2979.svg"
+                                    className="collect"><span>我的收藏集</span></a></li>
+                            <li className="nav-menu-item"><a
+                                    href="/user/582f1fe667f35600634207a1/books?type=bought"><i
+                                    className="fengwei fw-bought"></i><span
+                            >已购</span></a></li><!---->
+                            <li className="nav-menu-item"><a href="/subscribe"><i
+                                    className="fengwei fw-tag"></i><span
+                            >标签管理</span></a></li>
+                        </div>
+                        <div className="nav-menu-item-group">
+                            <li className="nav-menu-item"><a
+                                    href="/user/settings"><i
+                                    className="fengwei fw-setting"></i><span
+                            >设置</span></a></li>
+                            <li className="nav-menu-item more"><a><i
+                                    className="fengwei fw-info"></i><span
+                            >关于</span><i
+                                    className="ion-chevron-right more-icon"></i></a>
+                                <ul className="nav-menu more-dropdown-list">
+                                    <div className="nav-menu-item-group">
+                                        <li className="nav-menu-item"><a
+                                                href="/app" target="_blank">下载应用</a>
+                                        </li>
+                                        <li className="nav-menu-item"><a
+                                                href="/about"
+                                                target="_blank">关于</a></li>
+                                        <li className="nav-menu-item"><a
+                                                href="https://xitu.io/jobs"
+                                                target="_blank">加入我们</a>
+                                        </li>
+                                        <li className="nav-menu-item"><a
+                                                href="https://github.com/xitu/gold-miner"
+                                                rel="nofollow noopener noreferrer"
+                                                target="_blank">翻译计划</a>
+                                        </li>
+                                        <li className="nav-menu-item"><a
+                                                href="https://bd.juejin.im?utm_campaign=bd&amp;utm_source=web&amp;utm_medium=nav"
+                                                target="_blank">合作伙伴</a>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                        </div>
+                        <div className="nav-menu-item-group">
+                            <li className="nav-menu-item"><a><i
+                                    className="fengwei fw-logout"></i><span
+                            >登出</span></a></li>
+                        </div>
+                    </ul>
+                </li><!----><!----></ul>
+        </nav>
+    </div>
+</header>
