@@ -31,9 +31,8 @@ export  default  class  extends React.Component{
 
    //getInitialProps 是固定的
     static async getInitialProps(){
-         const res=await  fetch('http://woddp.yxilin.com/api/home/Pornhub/lists?c=111');
-         const data = await res.json()
-         return {data}
+
+         return {}
     }
 
     clickHandleProps(){
@@ -43,11 +42,7 @@ export  default  class  extends React.Component{
          return( <Layout>
             <h1>My Blog  {this.state.repoName} </h1>
             <ul>
-                {this.props.data.data.data.map(({title,key})=>{
-                    return (
-                        <PostLink key={`${key}`}  id={`${key}`} title={title}/>
-                    )
-                })}
+              
             </ul>
 
         </Layout>)
