@@ -1,35 +1,50 @@
-
-var  Store={
-    list:[],
-    editA:[],
-    commit:function (option,val) {
-        if(!this._isVal(option)){
-            this.list.push({value:val,key:option});
+class Action{
+    callFuncArr=[];
+    constructor(){}
+    emit( callback ){
+        if(typeof  callback==="function"){
+            this.callback=callback;
+            this.callFuncArr.push(callback);
         }
-        this._change(option,val);
-    },
-    _isVal:function (key,lists=[]) {
-        let is=false;
-        for (let item of lists){
-            if(item.key===key){
-                is=true;
-                break;
-            }
-        }
-        return is;
-    },
-    _change:function (key,val) {
-        for (let item of this.editA){
-            if(item.key===key){
-                item.val(val);
-            }
-        }
-    },
-    emit:function (key,callback) {
-        if(!this._isVal(key,this.editA)){
-            this.editA.push({key:key,val:callback});
+    }
+    commit(params){
+        if( this.callback!=null){
+            this.callFuncArr.forEach((func)=>{
+                func(params);
+            });
         }
     }
 }
+class  Store {
+    state={};
+   static instance=null;
+    constructor(store){
+        this.state=store.state||{};
+        this._addAction();
+    }
+   static State(store){
+        if(!this.instance){
+            this.instance=new Store(store);
+        }
+       return this.instance;
+   }
+    _addAction(){
+        Object.keys(this.state).forEach((key,i)=>{
+            let value=this.state[key];
+            this.state[key]={};
+            const  action=new Action();
+            this[key]={};
+            Object.assign(this[key],{
+                value:value, action:action,
+            });
+        })
+    }
+}
 
-export default  Store;
+let store=Store.State({
+    state:{
+        listen:false, //监听页面
+    }
+});
+
+export  default store;

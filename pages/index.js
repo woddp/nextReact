@@ -1,10 +1,10 @@
 import   Layout from  './components/layout';
 import Link from  'next/link'
-import fetch from 'isomorphic-unfetch'
 import React from 'react'
-import Store from './stores/store';
 import './index.less'
-import './components/header.less'
+import './components/header/header.less'
+import event from  './plugin/event'
+import Home from  './home/home'
 const  PostLink=(props)=>(
     <li>
         <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
@@ -20,31 +20,24 @@ export  default  class  extends React.Component{
            repoName:'',
            repoUrl:''
        };
-       Store.emit('woddp', (val) =>{
-           console.log(val);
-            this.setState({
-                repoName:val,
-            });
-       })
-
     }
+
+
 
    //getInitialProps 是固定的
     static async getInitialProps(){
-
          return {}
     }
-
+    async componentDidMount(){
+        event(); //监听全局事件
+    }
     clickHandleProps(){
 
     }
     render(){
-         return( <Layout>
-            <h1>My Blog  {this.state.repoName} </h1>
-            <ul>
-              
-            </ul>
-
-        </Layout>)
+         return(
+             <Layout>
+               <Home/>
+            </Layout>)
     }
 }
