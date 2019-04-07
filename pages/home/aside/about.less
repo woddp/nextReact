@@ -1,0 +1,28 @@
+.more-section {
+  background-color: transparent;
+  text-align: center;
+  color: #909090;
+  font-size: 1.2rem;
+  box-shadow: none;
+}
+.more-section .more-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: .4rem;
+  a:hover {
+    color: #007fff;
+  }
+  a:active, a:hover {
+    outline-width: 0;
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #909090;
+  }
+}
+          .more-section .more-list .item:not(:last-child)::after {
+            content: "·";
+            margin: 0px 0.4rem;
+          }

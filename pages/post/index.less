@@ -1,0 +1,132 @@
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+}
+.main-container>.view{
+  margin-top: 1.767rem;
+}
+.column-view {
+  padding: 0 0 8rem;
+}
+.article-area {
+  margin-bottom: 1.5rem;
+  padding: 0 2rem;
+}
+.main-area{
+  position: relative;
+  width: 700px;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.article {
+  margin-bottom: 3rem;
+  padding: 2rem 0 0;
+}
+
+.author-info-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.author-info-block .avatar-link{
+  font-size: 0;
+}
+.author-info-block .avatar {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+  width: 3.333rem;
+  height: 3.333rem;
+  border-radius: 50%;
+}
+.avatar {
+  display: inline-block;
+  position: relative;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #eee;
+}
+.lazy.loaded:before {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lazy:not(.immediate):before {
+  transition: opacity .2s;
+}
+.lazy:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: inherit;
+  border-radius: inherit;
+}
+.author-info-block .author-info-box {
+  min-width: 0;
+  flex-grow: 1;
+}
+.author-info-block .username{
+  display: inline-block;
+  max-width: 100%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.author-info-block .meta-box {
+  font-size: 1.1rem;
+  color: #909090;
+}
+.author-info-block .time {
+  letter-spacing: 1px;
+}
+.author-info-block .views-count{
+  margin-left: .5em;
+}
+.author-info-block .meta-box{
+  font-size: 1.1rem;
+  color: #909090;
+}
+.follow-button {
+  margin: 0 0 0 auto;
+  padding: 0;
+  width: 55px;
+  height: 26px;
+  font-size: 13px;
+  border: 1px solid #6cbd45;
+  color: #6cbd45;
+  background-color: #fff;
+}
+.article-content {
+  word-break: break-word;
+  line-height: 1.75;
+  font-weight: 400;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+.article-content h2 {
+  padding-bottom: 12px;
+  font-size: 24px;
+  border-bottom: 1px solid #ececec;
+}
+.article-content p {
+  line-height: inherit;
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+.article-content h2 {
+  padding-bottom: 12px;
+  font-size: 24px;
+  border-bottom: 1px solid #ececec;
+}

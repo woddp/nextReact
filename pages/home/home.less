@@ -4,14 +4,11 @@
   width: 100%;
   max-width: 960px;
 }
-.timeline-container{
-  height: 300px;
-}
+
 .timeline-entry-list {
   margin-right: 21.667rem;
   border-radius: 2px;
   width: 700px;
-  height: 300px;
   background: #fff;
 
 }
@@ -21,9 +18,7 @@
   right: 0;
 }
 .index-aside {
-  background: #fff;
   width: 20rem;
-  height: 20rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -35,6 +30,7 @@
 头部
  */
 .list-header {
+
   padding: 1.3rem 1rem;
   border-bottom: 1px solid hsla(0,0%,59.2%,.1);
 }
@@ -50,6 +46,7 @@
   padding: 0 1rem;
 }
 .list-header .left .nav-item {
+  position: relative;
   padding: 0 1.2rem;
   font-size: 1.16rem;
   border-right: 1px solid hsla(0,0%,59.2%,.2);
@@ -70,3 +67,67 @@
 .list-header .left .nav-item:last-child {
   border: none;
 }
+
+.index-aside .section{
+  background-color: #fff;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+
+   .header {
+    height: 45px;
+    line-height: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f6f6f6;
+  }
+  .section .header .title {
+    font-size: 14px;
+    flex-grow: 1;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tag-link {
+    color: #007fff;
+  }
+  .tag-list {
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .tag-list .tag {
+    margin-right: 12px;
+    margin-bottom: 12px;
+    background-color: #f3f6f3;
+    cursor: pointer;
+    height: 30px;
+    color: inherit;
+    line-height: 30px;
+    padding-left: 22px;
+    padding-right: 22px;
+    border-radius: 30px;
+  }
+  .tag-list .tag:hover {
+    color: #fff;
+    background-color: #0c0;
+  }
+}
+
+@media (max-width: 960px){
+  .index-aside{
+    display: none;
+  }
+  .timeline-entry-list {
+    margin-right: 0;
+    width: 100%;
+  }
+
+}
+
+
+

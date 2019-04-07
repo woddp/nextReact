@@ -6,10 +6,10 @@ class  OnResize {
 
     }
     getResize(resolve){
-        window.addEventListener('resize',(e)=>{
-            var docWidth = document.body.clientWidth;
-            resolve(docWidth);
-        });
+        // window.addEventListener('resize',(e)=>{
+        //     var docWidth = document.body.clientWidth;
+        //     resolve(docWidth);
+        // });
     }
     static getInstance(){
         if(!this.instance){
